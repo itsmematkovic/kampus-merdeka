@@ -1,0 +1,68 @@
+<fieldset>
+    <marquee>
+        <h2>////////////////////////////////////////////////</h2>
+        <h1>PERINGATAN GEMPA</h1>
+        <h2>////////////////////////////////////////////////</h2>
+    </ul>
+</marquee>
+</fieldset>
+<hr>
+<script>
+    class gempa{
+        constructor(lokasi,skal){
+            this.lokasi=lokasi;
+            this.skal=skal;
+        }
+
+//  - Jika skala 0 - 2, dampaknya tidak terasa
+// - Jika skala > 2 - 4, dampaknya bangunan retak-retak
+// - Jika skala > 4 - 6, dampaknya bangunan roboh
+// - Jika skala > 6, dampaknya bangunan roboh dan berpotensi tsunami
+
+// Fungsi dampak() akan mencetak populasi data:
+// - Lokasi Gempa:
+// - Skala:
+// - Dampak:
+
+        dampak(){
+            document.write(`<h2>Lokasi Gempa: ${this.lokasi}</h2>
+            <br>Skala Gempa: <b>${this.skal} SR</b>
+            <br>Dampak Gempa: `)
+
+            if(this.skal<2){
+                document.write('TIDAK TERASA<br><hr>');
+            }
+            else if (this.skal>=2 && this.skal<4){
+                document.write('BANGUNAN RETAK-RETAK<br><hr>');
+            }
+            else if (this.skal>=4 && this.skal<6){
+                document.write('BANGUNAN ROBOH<br><hr>');
+            }
+            else{
+                document.write('BANGUNAN ROBOH DAN BERPOTENSI TSUNAM<br><hr>');
+            }
+        }
+    }
+
+    let jp= new gempa('Fukushima, Jepang',8);
+    let arg= new gempa('Comodoro, Argentina',5);
+    let sr= new gempa('Batticaloa, Sri Lanka', 1);
+    let ac= new gempa('Aceh, Indonesia', 3);
+    let ml= new gempa('Malang, Indonesia', 4);
+    let sf= new gempa('San Francisco, Amerika Serikat',12);
+    let hk= new gempa('Hokkaido, Jepang',2);
+    let bel= new gempa('Belarus',1);
+    let sa= new gempa('Kyalami, Afrika Selatan', 3);
+    let ey= new gempa('eyjafjallajookull, Islandia', 7)
+
+    jp.dampak();
+    arg.dampak();
+    sr.dampak();
+    ac.dampak();
+    ml.dampak();
+    sf.dampak();
+    hk.dampak();
+    bel.dampak();
+    sa.dampak();
+    ey.dampak();
+</script>
